@@ -23,7 +23,7 @@ const mario = {
     ativa: false,
 };
 
-const App = () => {
+const Exercicio1 = () => {
 
     const dados = luana
     const total = dados.compras.map(compra => Number(compra.preco.replace("R$ ", ""))).reduce((anterior, atual)=> anterior+atual)
@@ -42,4 +42,4 @@ const App = () => {
     )
 }
 
-export default App
+export default Exercicio1
