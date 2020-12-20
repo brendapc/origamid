@@ -11,11 +11,11 @@ export const ApiContextData = ({children}) => {
         .then((json)=> setData(json))
     }, [])
 
-    function limpar() {
+    /*function limpar() {
         setData('')
-    }
+    }*/
 
-    return <ApiContext.Provider value={{ data, limpar }}>
+    return <ApiContext.Provider value={{ data }}>
         {children}
     </ApiContext.Provider>
 }

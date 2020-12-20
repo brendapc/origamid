@@ -9,7 +9,7 @@ const Display = () => {
         <div>
             Produtos: {' '}
             {dados.data && dados.data.map((produto) => <li key={produto.id}>{produto.nome}</li> )}
-            <button onClick={dados.limpar()}>Limpar</button>
+            {/* <button onClick={dados.limpar()}>Limpar</button> */}
         </div>
     )
 }
