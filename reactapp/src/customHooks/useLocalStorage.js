@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const useLocalStorage = (key, initial) =>{
-    const [ state, setState ] = React.useState(()=>{
-        const localValue = window.localStorage.getItem(key)
-        return localValue ? localValue : initial
-    })
+const useLocalStorage = (key, initial) => {
+  const [state, setState] = React.useState(() => {
+    const localValue = window.localStorage.getItem(key);
+    return localValue ? localValue : initial;
+  });
 
-    React.useEffect(()=>{
-        window.localStorage.setItem(key, state)
-    }, [key, state])
+  React.useEffect(() => {
+    window.localStorage.setItem(key, state);
+  }, [key, state]);
 
-    return [ state, setState]
-}
+  return [state, setState];
+};
 
 /* USE DESSE HOOK
 import useLocalStorage from './useLocalStorage';
