@@ -59,13 +59,11 @@ smoothScroll();
 
 function animationScroll() {
   const sections = document.querySelectorAll(".js-scroll");
-  console.log(sections)
   if (sections.length) {
     //se exitem sessões
     const windowMetade = window.innerHeight * 0.6; //60% da altura da janela
 
     function handleAnimationScroll() {
-      console.log('scrol')
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top; //pega altura do elemento até o topo da página
         const isSectionViseble = sectionTop - windowMetade < 0;
@@ -75,8 +73,7 @@ function animationScroll() {
       });
     }
     handleAnimationScroll();
-    window.addEventListener('scroll', handleAnimationScroll);
-    
+    window.addEventListener("scroll", handleAnimationScroll);
   }
 }
 animationScroll();
