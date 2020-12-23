@@ -234,3 +234,20 @@ dados li::before {
     margin-bottom: 0px;
   }
 }
+
+.js .js-accordion dd{
+  display: none;
+}
+.js .js-accordion dd.active{
+  display: block;
+}
+
+.js-accordion dt::after{
+  content: '↓';
+  margin-left: 10px;
+}
+
+.js-accordion dt.active::after{
+  content: '↑';
+  margin-left: 10px;
+}
