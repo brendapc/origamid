@@ -19,20 +19,64 @@ function handleMenu() {
     });
   }
 }
-handleMenu()
+handleMenu();
 
-function handleAccordion(){
-  const accordionContent = document.querySelectorAll('.js-accordion dt')
-  accordionContent[0].classList.add('active')
-  accordionContent[0].nextElementSibling.classList.add('active')
+function handleAccordion() {
+  const accordionContent = document.querySelectorAll(".js-accordion dt");
+  accordionContent[0].classList.add("active");
+  accordionContent[0].nextElementSibling.classList.add("active");
 
-  function handleToggle(){
-    this.classList.toggle('active')
-    this.nextElementSibling.classList.toggle('active')
+  function handleToggle() {
+    this.classList.toggle("active");
+    this.nextElementSibling.classList.toggle("active");
   }
 
-  accordionContent.forEach((item)=>{
-    item.addEventListener('click', handleToggle)
-  })
+  accordionContent.forEach((item) => {
+    item.addEventListener("click", handleToggle);
+  });
 }
-handleAccordion()
+handleAccordion();
+
+function smoothScroll() {
+  const links = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  function handleScroll(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const element = document.querySelector(href);
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
+  links.forEach((link) => {
+    link.addEventListener("click", handleScroll);
+  });
+}
+smoothScroll();
+
+function animationScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+  console.log(sections)
+  if (sections.length) {
+    //se exitem sessões
+    const windowMetade = window.innerHeight * 0.6; //60% da altura da janela
+
+    function handleAnimationScroll() {
+      console.log('scrol')
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top; //pega altura do elemento até o topo da página
+        const isSectionViseble = sectionTop - windowMetade < 0;
+
+        if (isSectionViseble) section.classList.add("active");
+        else section.classList.remove("active");
+      });
+    }
+    handleAnimationScroll();
+    window.addEventListener('scroll', handleAnimationScroll);
+    
+  }
+}
+animationScroll();
