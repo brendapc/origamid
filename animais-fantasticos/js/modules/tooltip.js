@@ -14,10 +14,8 @@ export default function initTooltip(){
         onMouseLeave.tooltipBox = tooltipBox
         onMouseLeave.element = this
 
-
         this.addEventListener('mousemove', onMouseMove)
         onMouseMove.tooltipBox = tooltipBox
-        
 
     }
     const onMouseLeave = {
@@ -33,7 +31,6 @@ export default function initTooltip(){
             this.tooltipBox.style.left = event.pageX + 20 + 'px'
         }
     }
-
 
     function createTooltip(element) {
         const tooltipBox = document.createElement('div')

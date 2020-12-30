@@ -4,6 +4,7 @@ import handleAccordion from './modules/faqAccordion.js'
 import handleMenu from './modules/menu.js'
 import initModal from './modules/initModal.js'
 import initTooltip from './modules/tooltip.js'
+import dropdownMenu from './modules/dropdownMenu.js'
 
 initModal()
 initTooltip()
@@ -11,3 +12,4 @@ smoothScroll()
 scrollAnimation()
 handleAccordion()
 handleMenu()
+dropdownMenu()
