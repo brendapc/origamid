@@ -14,6 +14,7 @@ export default function initTooltip(){
         //this.addEventListener('mousemove', onMouseMove)
 
         onMouseLeave.tooltipBox = tooltipBox
+        onMouseLeave.element = this
 
     }
     const onMouseLeave = {
