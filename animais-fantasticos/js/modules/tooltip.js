@@ -13,9 +13,13 @@ export default function initTooltip(){
         this.addEventListener('mouseleave', onMouseLeave)
         //this.addEventListener('mousemove', onMouseMove)
 
-        function onMouseLeave(params) {
-            tooltipBox.remove()
-            this.removeEventListener('mouseleave', onMouseLeave)
+        onMouseLeave.tooltipBox = tooltipBox
+
+    }
+    const onMouseLeave = {
+        handleEvent(){ //tem que ser esse nome
+            this.tooltipBox.remove()
+            this.element.removeEventListener('mouseleave', onMouseLeave)
         }
     }
 
