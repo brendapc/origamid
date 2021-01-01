@@ -10,5 +10,18 @@ export default function dropdownMenu() {
         event.preventDefault()
         this.classList.toggle('active')
         console.log(this)
+        outsideClick(this, ()=>{
+            this.classList.remove('active')
+        })
+    }
+    function outsideClick(element, callback) {
+        const htmlElement = document.documentElement
+        htmlElement.addEventListener('click', handleOutsideClick)
+        function handleOutsideClick(event) {
+            if(!element.contains(event.target)){
+                callback()
+                htmlElement.removeEventListener('click', handleOutsideClick)
+            }
+        }
     }
 }
