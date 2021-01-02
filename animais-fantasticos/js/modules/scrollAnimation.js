@@ -10,7 +10,7 @@ export default function scrollAnimation() {
         const isSectionViseble = sectionTop - windowMetade < 0;
 
         if (isSectionViseble) section.classList.add("active");
-        else section.classList.remove("active");
+        else if (section.classList.contains('active')) section.classList.remove("active");
       });
     }
     handleAnimationScroll();
