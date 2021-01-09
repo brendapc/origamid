@@ -5,6 +5,7 @@ import Sobre from "./components/Sobre";
 import Header from "./components/Header";
 import Contato from "./components/Contato";
 import NaoEncontrada from "./components/NaoEncontrada";
+import Produto from "./components/Produto";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="sobre" element={<Sobre />} />,
         <Route path="contato" element={<Contato />} />,
         <Route path="*" element={<NaoEncontrada />} />
+        <Route path="produto/:id" element={<Produto />} />
       </Routes>
     </BrowserRouter>
   );
