@@ -15,7 +15,7 @@ const Contato = () => {
           <li>Rua é as guria, 1903</li>
         </ul>
       </div>
-      <Head title="Ranek | Contato" description="entre em contato" />
+      <Head title="Ecommerce | Contato" description="entre em contato" />
     </div>
   );
 };

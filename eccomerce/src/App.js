@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Contato from "./components/Contato";
 import './App.css'
+import Produto from "./components/Produto";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/produto/:id" element={<Produto />} />
             <Route path="contato" element={<Contato />} />
           </Routes>
         </div>
